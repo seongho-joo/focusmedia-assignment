@@ -1,10 +1,9 @@
-package focusmedia.assignment.user.domain;
+package focusmedia.assignment.client.domain;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 import focusmedia.assignment.common.BaseRepositoryTest;
-import focusmedia.assignment.user.exception.NotExistUserException;
+import focusmedia.assignment.client.exception.NotExistClientException;
 import java.util.Optional;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -12,16 +11,16 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @BaseRepositoryTest
-class UserRepositoryTest {
+class ClientRepositoryTest {
 
     @Autowired
-    private UserRepository userRepository;
+    private ClientRepository clientRepository;
 
-    private User user;
+    private Client client;
 
     @BeforeEach
     void setUp() {
-        user = User.builder()
+        client = Client.builder()
             .countryCode(82)
             .name("홍길동")
             .email("test@test.com")
@@ -32,38 +31,38 @@ class UserRepositoryTest {
 
     @Test
     @DisplayName("회원 등록 테스트")
-    void createUser() {
+    void saveClient() {
         // when
-        userRepository.save(user);
+        clientRepository.save(client);
 
         // then
-        assertThat(user.getId()).isNotNull();
+        assertThat(client.getId()).isNotNull();
     }
 
     @Test
     @DisplayName("회원 조회 테스트")
-    void findUserById() {
+    void findClientById() {
         // given
-        User savedUser = userRepository.save(user);
+        Client savedClient = clientRepository.save(client);
 
         // when
-        User foundUser = userRepository.findById(savedUser.getId())
-            .orElseThrow(NotExistUserException::new);
+        Client foundClient = clientRepository.findById(savedClient.getId())
+            .orElseThrow(NotExistClientException::new);
 
         // then
-        assertThat(foundUser).isEqualTo(savedUser);
+        assertThat(foundClient).isEqualTo(savedClient);
     }
 
     @Test
     @DisplayName("회원 조회 실패 - 존재하지 않는 회원을 조회")
-    void findUserById_fail() {
+    void findClientById_fail() {
         // given
-        Long userId = 100L;
+        Long clientId = 100L;
 
         // when
-        Optional<User> optionalUser = userRepository.findById(userId);
+        Optional<Client> optionalClient = clientRepository.findById(clientId);
 
         // then
-        assertThat(optionalUser).isEmpty();
+        assertThat(optionalClient).isEmpty();
     }
 }

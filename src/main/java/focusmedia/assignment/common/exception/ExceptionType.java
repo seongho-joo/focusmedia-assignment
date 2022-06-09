@@ -2,7 +2,7 @@ package focusmedia.assignment.common.exception;
 
 import static org.springframework.http.HttpStatus.BAD_REQUEST;
 
-import focusmedia.assignment.user.exception.NotExistUserException;
+import focusmedia.assignment.client.exception.NotExistClientException;
 import java.util.Arrays;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -11,7 +11,7 @@ import org.springframework.http.HttpStatus;
 @Getter
 @RequiredArgsConstructor
 public enum ExceptionType {
-    NOT_EXIST_USER("존재하지 않는 회원입니다.", BAD_REQUEST, NotExistUserException.class);
+    NOT_EXIST_CLIENT("존재하지 않는 고객입니다.", BAD_REQUEST, NotExistClientException.class);
 
     private final String message;
     private final HttpStatus status;
