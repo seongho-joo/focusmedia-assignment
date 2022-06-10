@@ -21,7 +21,7 @@ public class ClientSaveRequest {
     @Email(message = "이메일 형식대로 입력해주세요.")
     private String email;
 
-    @NotBlank(message = "국가 코드를 선택해주세요.")
+    @NotNull(message = "국가 코드를 선택해주세요.")
     private Integer countryCode;
 
     @NotBlank(message = "연락처를 입력해주세요.")
