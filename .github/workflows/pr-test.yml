@@ -28,8 +28,9 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
+
       - name: Start MySQL
-        run: sudo service mysql start
+        run: sudo mysql.service start
 
       - name: Init Database
         run: |
