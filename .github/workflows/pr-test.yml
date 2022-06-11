@@ -30,7 +30,7 @@ jobs:
           java-version: 11
 
       - name: Start MySQL
-        run: sudo mysql.service start
+        run: mysql.service start
 
       - name: Init Database
         run: |
