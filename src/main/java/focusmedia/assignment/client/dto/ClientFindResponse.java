@@ -2,7 +2,6 @@ package focusmedia.assignment.client.dto;
 
 import focusmedia.assignment.client.domain.Client;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.annotations.ApiParam;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
