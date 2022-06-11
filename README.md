@@ -13,4 +13,4 @@
 
 ## API Docs
 ![API 문서](images/api-docs.png)
-- [API Docs 🔗](http://ec2-43-200-3-18.ap-northeast-2.compute.amazonaws.com:8080/swagger-ui.html#/)
+- [🔗 Swagger](http://13.209.66.134:8080/swagger-ui.html#/)
