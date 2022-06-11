@@ -7,6 +7,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+
     steps:
       - name: Shutdown ubuntu MySQL
         run: sudo service mysql stop
@@ -28,7 +29,7 @@ jobs:
         with:
           java-version: 11
       - name: Start MySQL
-        uses: sudo service mysql start
+        run: sudo service mysql start
 
       - name: Init Database
         run: |
